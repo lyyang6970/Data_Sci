@@ -175,6 +175,130 @@ Linkage Key 更强调跨不同数据源连接记录。
 
 <img width="706" height="228" alt="Screenshot 2026-11-02 at 09 54 10" src="https://github.com/user-attachments/assets/eaa070db-777a-4abe-8f3e-54087d244404" />
 
+**A safe join begins with a cardinality question**
+
+<img width="439" height="195" alt="Screenshot 2026-11-02 at 09 56 39" src="https://github.com/user-attachments/assets/90ef330c-fe8f-4b20-80c1-3764ea533d12" />
+
+
+**Data Provenance（数据溯源）**
+
+Provenance records where data came from, how they were generated, and every material transformation applied before analysis.
+
+数据溯源记录数据来自哪里、如何产生，以及在正式分析之前经历了哪些重要的数据转换。
+
+<img width="637" height="506" alt="Screenshot 2026-11-02 at 10 15 00" src="https://github.com/user-attachments/assets/3613e3ec-dbcb-40b5-9168-bb4a9d585957" />
+
+<img width="642" height="290" alt="Screenshot 2026-11-02 at 10 15 43" src="https://github.com/user-attachments/assets/dcd2ab36-ff3f-437d-b348-c84b48cdf35a" />
+
+
+**FAIR Data Principles**
+
+<img width="905" height="164" alt="Screenshot 2026-11-02 at 10 16 31" src="https://github.com/user-attachments/assets/c83b9d3b-fceb-4423-bfff-bd29cd1d01b5" />
+
+
+## Cleaning and exploratory analysis
+
+**Units and Plausibility**
+
+<img width="505" height="89" alt="Screenshot 2026-11-02 at 10 29 41" src="https://github.com/user-attachments/assets/6bbe8c29-6587-4ade-b18b-fd7ec5d4a4b8" />
+
+<img width="706" height="180" alt="Screenshot 2026-11-02 at 10 30 12" src="https://github.com/user-attachments/assets/e6d72b6f-9ab7-4c49-8c96-2b447fbae9a6" />
+
+**Robust centre and spread**
+
+<img width="468" height="147" alt="Screenshot 2026-11-02 at 10 31 19" src="https://github.com/user-attachments/assets/b93c2564-7d67-413d-af48-c7dbe809b974" />
+
+> [!NOTE]
+> 判断规则：
+> - 低于 Lower fence → 潜在异常值。
+> - 高于 Upper fence → 潜在异常值。
+> - 位于两个界限之间 → 不会被这条规则标记。
+
+**Outliers, anomalies, and influential observations**
+
+<img width="902" height="192" alt="Screenshot 2026-11-02 at 10 33 24" src="https://github.com/user-attachments/assets/d55b62d1-c386-46d2-adba-e4f11de42803" />
+
+**Gene expression before and after log2 transformation**
+
+<img width="717" height="415" alt="Screenshot 2026-11-02 at 10 34 39" src="https://github.com/user-attachments/assets/416c441b-6c94-46cf-8d65-2b96f4033fed" />
+
+> [!IMPORTANT}
+> 少数特别大的表达值会拉长横坐标，并且可能主导可视化结果和距离计算。
+> 对数转换改变的是基因表达数据的数值尺度，并不会创造新的生物学信息。
+
+**Empirical cumulative distribution: reading quantiles（经验累积分布函数与分位数）**
+
+<img width="483" height="154" alt="Screenshot 2026-11-02 at 10 36 30" src="https://github.com/user-attachments/assets/499d8b6c-5fc2-4266-8ced-e4647db40565" />
+
+<img width="715" height="183" alt="Screenshot 2026-11-02 at 10 36 46" src="https://github.com/user-attachments/assets/277d8f89-f00c-42a9-8447-6b0b1a16d81b" />
+
+<img width="410" height="257" alt="Screenshot 2026-11-02 at 10 37 34" src="https://github.com/user-attachments/assets/ad9f7026-2253-46f1-9a9a-e832e0ddc63b" />
+
+ECDF shows the proportion of observations at or below each threshold, allowing us to read quantiles and compare entire distributions.
+
+**Missing data: MCAR, MAR, and MNAR**
+
+1. MCAR — Missing Completely At Random（完全随机缺失）:数据是否缺失，与已经观测到的数值以及未观测到的数值都无关。
+
+2. MAR — Missing At Random（随机缺失）:缺失可能与已经观测到的变量有关，但在控制这些已观测变量后，不再依赖缺失值本身。
+
+<img width="475" height="65" alt="Screenshot 2026-11-02 at 10 41 03" src="https://github.com/user-attachments/assets/991bd0ca-abc7-4f31-a201-6fbf14eb56a7" />
+
+3. MNAR — Missing Not At Random（非随机缺失）:即使已经考虑其他观测变量，缺失概率仍然与缺失值本身有关。(e.g.:当检测值超过仪器的测量范围时，检测可能失败，因此特别高的数值更容易缺失。)
+
+<img width="901" height="239" alt="Screenshot 2026-11-02 at 10 40 19" src="https://github.com/user-attachments/assets/4eacb7ca-af65-4340-8f59-7a69405757db" />
+
+<img width="759" height="395" alt="Screenshot 2026-11-02 at 10 42 11" src="https://github.com/user-attachments/assets/61737bbd-4197-4055-adba-dc1b98fac612" />
+
+**Handling missing data**
+
+<img width="785" height="197" alt="Screenshot 2026-11-02 at 10 44 02" src="https://github.com/user-attachments/assets/be8b4513-6c86-43d6-a68d-48c0cdf5e0d2" />
+
+> [!IMPORTANT]
+> Imputation is a model, not clerical replacement.
+> 插补是一种建模过程，而不是简单地把空白格填上数字。
+
+**Imputation toolbox: from simple rules to models**
+
+<img width="896" height="317" alt="Screenshot 2026-11-02 at 10 45 59" src="https://github.com/user-attachments/assets/946acb74-9bcb-4d21-a256-59adc3465d16" />
+
+*利用时间信息插补：*
+
+使用前一次观测值插补；使用下一次观测值插补；使用缺失值前后两个时间点的信息进行估计；平滑轨迹：不只是利用前后两个点，而是使用多个时间点的数据，估计整体变化趋势。
+
+*利用相似记录：*
+
+寻找与缺失记录相似的其他记录，利用它们的信息估计缺失值。
+
+> [!IMPORTANT]
+> Imputation should use the structure of the data; constants, time, similar records, and predictive models each make different assumptions.
+> 插补应该利用数据本身的结构。使用固定值、时间信息、相似记录或预测模型，都意味着不同的统计假设。
+> 例如：
+> - 均值插补假设使用一个代表性中心值是合理的。
+> - 时间插值假设相邻时间点之间存在可以利用的变化规律。
+> - KNN 假设相似记录在目标变量上也可能相似。
+> - 回归插补假设其他已观测变量可以预测缺失变量。
+> 因此，没有一种插补方法永远是最好的。
+
+> 需要根据数据结构、缺失机制和研究目标选择方法。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
