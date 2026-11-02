@@ -421,11 +421,182 @@ PCA 是一种多变量降维方法，目的是通过新的变量组合减少数�
 
 <img width="742" height="148" alt="Screenshot 2026-11-02 at 11 58 45" src="https://github.com/user-attachments/assets/ee478b72-8d59-4c89-abf2-c37173ffcfd9" />
 
+**EDA**
+
+*Definition:* The iterative use of summaries and visualisations to understand structure, quality, relationships, and anomalies before formal modelling.
+
+在正式建模之前，通过反复使用统计汇总和可视化，理解数据的结构、质量、变量关系和异常情况。
+
+> [!NOTE]
+> Step 1：Ask a precise question（提出一个明确的问题）
+> 
+> Step 2：Choose a representation that can answer it（选择能够回答问题的表示方式）
+> 
+> Step 3：Inspect the result for signal and artefact（检查结果中的真实信号与人为假象）
+> 
+> *EDA 的任务之一，就是区分 Signal 和 Artefact。*
+> 
+> Step 4：Revise the question or data transformation（修正问题或数据转换方式）
+> 
+> Step 5：Document what changed and why（记录修改内容及原因）
+>
+> **必要时重新提出问题，开始下一轮 EDA**
 
 
+## Privacy, Bias, and reproducibility
+
+**Personal and special category data（个人数据与特殊类别数据）**
+
+<img width="894" height="294" alt="Screenshot 2026-11-02 at 13 17 41" src="https://github.com/user-attachments/assets/6fe015fd-a59b-41b9-a713-ea3d71624bf1" />
+
+> [!NOTE]
+>
+> 个人数据是指与已经被识别或能够被识别的在世自然人有关的信息。*（个人数据不一定需要包含姓名）*
+>
+> 健康数据和基因数据在 UK GDPR 下受到额外保护。当生物识别数据被用于唯一识别某个人时，也属于特殊类别数据。
+>
+> <img width="734" height="192" alt="Screenshot 2026-11-02 at 13 19 36" src="https://github.com/user-attachments/assets/74d0509e-ee2f-4133-93fa-d006d0ab4882" />
+>
+> 处理个人数据，需要具有并记录 UK GDPR 第 6 条规定的合法依据。
+>
+> 处理特殊类别个人数据，还需要满足 UK GDPR 第 9 条规定的条件。
+
+**Anonymisation, pseudonymisation, and disclosure control（匿名化、假名化与信息披露控制）**
+
+<img width="900" height="301" alt="Screenshot 2026-11-02 at 13 22 50" src="https://github.com/user-attachments/assets/220ca493-6e6a-41bb-a03a-7a2b8ef53502" />
+
+1. *Anonymisation（匿名化）:* 在具体使用环境中，通过合理可能使用的识别手段，已经无法识别数据对应的个人。
+> [!IMPORTANT]
+> 
+> 有效匿名化的信息不再属于 UK GDPR 所保护的个人数据。
+
+2. *Pseudonymisation（假名化）:* 用其他标识符替换直接身份信息，同时另外保存受到保护的关联信息，使数据在必要时仍可以重新关联到个人。
+> [!IMPORTANT]
+> 
+> 假名化数据仍然属于个人数据，需要遵守 UK GDPR。
+
+<img width="671" height="236" alt="Screenshot 2026-11-02 at 13 25 29" src="https://github.com/user-attachments/assets/436c7b10-bf72-43a9-9544-5b9cfff0f564" />
+
+3. *Masking（掩码处理）:* 例如原始电话号码07123456789， masking后07123******；原始姓名：Alice Smith，masking后A**** S****。
+4. *Generalisation（泛化）:* 降低数据的精确程度，例如使用年龄分组或更广泛的地理区域。
+5. *Date shifting（日期偏移）:* 修改准确日期，同时在适当情况下保留事件的相对顺序。
+6. *Tokenisation（令牌化）:* 使用稳定的随机令牌替换标识符。
 
 
+**k-anonymity（k-匿名性）**
 
+A quasi-identifier is a variable combination that may identify people when linked to external information.
+
+准标识符是指某些变量或变量组合，在与外部信息结合时，可能用于识别个人身份。
+
+<img width="493" height="520" alt="Screenshot 2026-11-02 at 13 35 20" src="https://github.com/user-attachments/assets/3fb3b5e8-dda0-4962-aec4-0e9ddf97b500" />
+
+Quasi-identifiers are not necessarily direct identifiers, but their combinations may enable re-identification.
+
+> [!IMPORTANT]
+> Direct identifier：例如姓名、NHS Number，可以直接识别个人。
+> 
+> Quasi-identifier：例如年龄和地区，可能通过组合或外部信息识别个人。
+
+An equivalence class is a set of records sharing the same quasi-identifier values.
+
+等价类是指在选定的准标识符上，具有完全相同取值的一组记录。
+
+<img width="784" height="308" alt="Screenshot 2026-11-02 at 13 37 47" src="https://github.com/user-attachments/assets/1d12f117-3d31-4ccc-91e0-e91df2932860" />
+
+<img width="747" height="314" alt="Screenshot 2026-11-02 at 13 38 34" src="https://github.com/user-attachments/assets/91d4931d-107f-4031-8717-8c6ffae53d86" />
+
+*k-anonymity 的正式定义：* Every equivalence class contains at least k records, so each record is indistinguishable from at least k−1 others on the selected quasi-identifiers.
+
+每个等价类都必须至少包含 k 条记录，使得每条记录在选定的准标识符上，至少与另外 k−1 条记录无法区分。
+
+<img width="782" height="733" alt="Screenshot 2026-11-02 at 13 40 13" src="https://github.com/user-attachments/assets/eabb63dc-f35d-4668-9b44-57cd4448caf7" />
+
+<img width="803" height="93" alt="Screenshot 2026-11-02 at 13 41 03" src="https://github.com/user-attachments/assets/83ab0e6b-fe38-481f-81ed-f4fcfd94e8a7" />
+
+**ℓ-diversity addresses attribute homogeneity（ℓ-多样性：解决敏感属性同质性问题）**
+
+<img width="918" height="373" alt="Screenshot 2026-11-02 at 13 44 16" src="https://github.com/user-attachments/assets/e9fe6b57-2da3-449b-945a-04f0f2cc0a65" />
+
+*Attribute homogeneity（敏感属性同质性）:* 三个人的 Disease 都是 HIV。
+
+如果有人知道某个人属于这个等价类，虽然不知道他对应 A、B、C 中的哪一条记录，却仍然可以推断出他的疾病是 HIV。
+
+Attribute homogeneity（敏感属性同质性）意思是：同一个等价类中的敏感属性过于相似，甚至完全相同。
+
+> [!NOTE]
+> Quasi-identifiers 用于分组；Sensitive attributes 是我们不希望被轻易推断的信息。
+>
+> 在 distinct ℓ-diversity 的定义下，每个等价类必须至少包含 ℓ 个不同的敏感属性取值。
+
+<img width="787" height="729" alt="Screenshot 2026-11-02 at 13 47 49" src="https://github.com/user-attachments/assets/6795b7fb-ec35-438c-b464-3a2a42ad8c4b" />
+
+<img width="641" height="217" alt="Screenshot 2026-11-02 at 13 48 34" src="https://github.com/user-attachments/assets/94e31ef9-d985-421f-9e2b-9a6524038e38" />
+
+**Health data governance: beyond GDPR compliance（健康数据治理：超越 GDPR 合规）**
+
+<img width="867" height="418" alt="Screenshot 2026-11-02 at 13 53 59" src="https://github.com/user-attachments/assets/0184c99d-6d97-4a86-9855-765c9a988809" />
+
+<img width="763" height="210" alt="Screenshot 2026-11-02 at 13 54 12" src="https://github.com/user-attachments/assets/b8039d1a-a7e6-41a8-8c97-0c8116b24e50" />
+
+**Bias**
+
+1. Population and access → Selection bias
+2. Measurement → Measurement bias
+3. Target and proxy → Label or proxy bias
+4. Deployment → Allocation and feedback bias
+
+*Selection bias（选择偏差）*
+
+假设我们想研究某种疾病在全国人口中的发生情况。
+
+但我们的数据只来自医院。
+
+这意味着：
+- 去医院就诊的人可能进入数据集。
+- 没有医疗服务可及性的人可能无法进入数据集。
+- 症状较轻、没有就诊的人可能没有记录。
+因此，医院数据不一定代表全国人口。
+举个例子
+假设某地区有 1,000 名居民：
+- 600 人居住在城市。
+- 400 人居住在农村。
+但研究数据中：
+- 90% 来自城市患者。
+- 10% 来自农村患者。
+这意味着农村人口在数据中代表性不足（Underrepresentation）。
+
+如果我们直接用这些数据训练模型，模型可能更适合城市患者。
+
+Measurement bias（测量偏差）
+
+假设两家医院测量同一种生物标志物。
+
+医院 A 使用经过校准的仪器。
+
+医院 B 使用存在系统性偏差的仪器。
+
+真实乳酸浓度为：3 mmol/L
+
+但医院 B 的仪器总是测得：4 mmol/L
+
+那么医院 B 的记录就存在系统性测量偏差。
+
+这可能让模型错误地认为医院 B 的患者乳酸浓度普遍更高。
+
+医疗数据中的另一个例子
+假设：
+- 严重患者每天测量乳酸。
+- 病情较轻的患者每周测量一次。
+那么两组患者的测量频率不同。
+
+这种测量过程差异可能影响数据的完整性、分布和后续模型结果。
+
+这也联系到前面学习的 Missing data（缺失数据）。
+
+*重点：即使数据已经成功记录，也不代表它能无偏地反映真实健康状况。*
+
+<img width="748" height="252" alt="Screenshot 2026-11-02 at 14 05 09" src="https://github.com/user-attachments/assets/4e949893-e2b5-4849-a9ca-18cdeab510e9" />
 
 
 
