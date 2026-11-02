@@ -282,22 +282,60 @@ ECDF shows the proportion of observations at or below each threshold, allowing u
 
 > 需要根据数据结构、缺失机制和研究目标选择方法。
 
+**Scaling variables: putting measurements on comparable scales（变量缩放：让不同变量处于可比较的尺度）**
+
+Why scale: Large numerical ranges can dominate methods based on distances or variable magnitude.
+
+<img width="449" height="226" alt="Screenshot 2026-11-02 at 10 51 47" src="https://github.com/user-attachments/assets/d11ed630-e537-4a59-9f42-2985f865206f" />
+
+*Min-max normalisation 的目标是：把原始数据的最小值转换成 0，最大值转换成 1。*
+
+**Using similar records or prediction models**
+
+1. Nearest Neighbour Imputation（最近邻插补）
+
+2. Regression or Machine Learning Imputation（回归或机器学习插补）
+
+<img width="778" height="341" alt="Screenshot 2026-11-02 at 10 54 31" src="https://github.com/user-attachments/assets/de57dd2a-5d3e-49d9-bd9d-902b273c3fec" />
+
+*Nearest Neighbour Imputation: Euclidean Distance*
+
+*Regression or Machine Learning Imputation: 线性回归预测公式* 
+
+Record based and model based imputation both estimate missing values conditionally on observed information.
+
+基于相似记录的插补和基于模型的插补，都是利用已经观测到的信息，有条件地估计缺失值。
+
+**KNN imputation: visual intuition**
+
+> [!NOTE]
+> KNN; meaning k nearest neighbours; imputes a missing value by looking for observations that are most similar on the variables that are already observed.
+> 它通过寻找在已观测变量上最相似的其他记录，来填补缺失值。
+
+<img width="485" height="432" alt="Screenshot 2026-11-02 at 11 02 52" src="https://github.com/user-attachments/assets/2cf90a9e-ea6e-4837-9a88-340f142da443" />
+
+<img width="675" height="171" alt="Screenshot 2026-11-02 at 11 03 26" src="https://github.com/user-attachments/assets/6b56a5c8-a5d4-4ddd-a1f0-a0f2d2128865" />
+
+**Bivariate visualisation: relationships**
+
+<img width="896" height="188" alt="Screenshot 2026-11-02 at 11 05 42" src="https://github.com/user-attachments/assets/289bf6e2-1894-479f-b37d-af685fea47cb" />
+
+**Pearson and Spearman correlation**
+
+<img width="805" height="269" alt="Screenshot 2026-11-02 at 11 06 59" src="https://github.com/user-attachments/assets/ce9a1454-2bc4-442d-b0e1-20e5ae877c32" />
+
+> [!NOTE]
+> Pearson 用于衡量两个变量之间的线性关联。
+> Spearman 用于衡量单调关系. *单调关系指：随着 X 增加，Y 总体上持续增加，或者持续减少。但这种关系不一定是一条直线。*
 
 
+**Correlation**
 
+<img width="773" height="307" alt="Screenshot 2026-11-02 at 11 09 42" src="https://github.com/user-attachments/assets/eb1da27a-c49f-4a73-9646-c29be4d6b1e9" />
 
-
-
-
-
-
-
-
-
-
-
-
-
+> [!NOTE]
+> 特点一：对角线永远是 1
+> 特点二：矩阵是对称的
 
 
 
