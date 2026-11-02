@@ -365,6 +365,74 @@ PCA 是一种多变量降维方法，目的是通过新的变量组合减少数�
 
 <img width="820" height="417" alt="Screenshot 2026-11-02 at 11 39 07" src="https://github.com/user-attachments/assets/496e3576-8a3d-4199-b521-3fe5bf35a308" />
 
+- Positive covariance：两个变量倾向于同向变化。
+- Negative covariance：两个变量倾向于反向变化。
+- Covariance near zero：两个变量没有明显的线性共同变化。
+
+<img width="151" height="60" alt="Screenshot 2026-11-02 at 11 42 39" src="https://github.com/user-attachments/assets/6d4a6b10-aaed-49cf-86e3-6b7c14bd67a3" /> <img width="249" height="65" alt="Screenshot 2026-11-02 at 11 42 19" src="https://github.com/user-attachments/assets/878c3e10-fd49-47ba-9a8a-6a2e16bfdeec" /> <img width="334" height="79" alt="Screenshot 2026-11-02 at 11 43 26" src="https://github.com/user-attachments/assets/6e20fa01-165a-421a-a223-a64db89eebba" />
+
+<img width="317" height="286" alt="Screenshot 2026-11-02 at 11 43 54" src="https://github.com/user-attachments/assets/aedac362-f689-47a0-aceb-ec9fd11a67b5" />
+
+**From a transpose product to the covariance matrix（从矩阵转置乘法推导协方差矩阵）**
+
+<img width="676" height="426" alt="Screenshot 2026-11-02 at 11 45 22" src="https://github.com/user-attachments/assets/f93243b5-6b8d-4d26-8356-c95742fb4843" />
+
+<img width="751" height="240" alt="Screenshot 2026-11-02 at 11 45 56" src="https://github.com/user-attachments/assets/e1a9ca43-d26b-4c13-9150-00bf028a3ad1" />
+
+> [!IMPORTANT]
+> Diagonal（对角线）→ Variance
+> Off-diagonal（非对角线）→ Covariance
+
+**Eigenvectors & Eigenvalues（特征向量与特征值）**
+
+<img width="912" height="380" alt="Screenshot 2026-11-02 at 11 47 45" src="https://github.com/user-attachments/assets/8efd2fc9-e8df-47a6-a3fe-7e46cef1ca02" />
+
+> [!NOTE]
+> Eigenvector 是在矩阵变换下仍保持其所在方向轴线的特殊向量，决定方向。
+> Eigenvalue（特征值）：在 PCA 中表示对应方向的方差。
+
+**Eigen Decomposition（特征值分解）**
+
+<img width="749" height="478" alt="Screenshot 2026-11-02 at 11 51 02" src="https://github.com/user-attachments/assets/b7ff70b3-4e92-4d85-a95a-663c8398f578" />
+
+<img width="908" height="399" alt="Screenshot 2026-11-02 at 11 51 27" src="https://github.com/user-attachments/assets/25e25e38-9e64-4ed0-866b-8e7a0ef79bed" />
+
+> [!NOTE]
+> 1. U：Eigenvector matrix（特征向量矩阵）
+> 2. Σ：Eigenvalue matrix（特征值对角矩阵）非对角线是0，特征值排列在对角线上。
+> 3. \(U^T\)：特征向量矩阵的转置
+> Eigen decomposition allows PCA to rotate the original data into a new coordinate system where the principal components are uncorrelated and ordered by variance.
+> 特征值分解让 PCA 将原始数据转换到新的坐标系，使主成分之间不相关，并按照方差大小排列。
+
+
+**Leakage**
+
+*Definition:* Information from evaluation data enters model development, directly or indirectly, producing optimistic performance estimates.
+
+评估数据中的信息直接或间接进入模型开发过程，导致模型性能评估过于乐观。
+
+> [!WARNING]
+> 举个简单例子:
+> 假设我们训练一个模型预测患者是否会死亡。
+> 如果模型训练时已经知道了测试患者的死亡结果，那么预测当然可能非常准确。
+> 但这并不能证明模型真正具有预测能力。
+> 因为现实中，我们需要在患者结局发生之前进行预测。
+> *这就是 Leakage 的危险：模型看起来表现很好，但实际上利用了不应该知道的信息。*
+
+<img width="742" height="148" alt="Screenshot 2026-11-02 at 11 58 45" src="https://github.com/user-attachments/assets/ee478b72-8d59-4c89-abf2-c37173ffcfd9" />
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
