@@ -724,6 +724,9 @@ Authorship（论文作者署名）
 
 <img width="597" height="270" alt="Screenshot 2026-11-02 at 14 34 19" src="https://github.com/user-attachments/assets/03d6ea64-966d-45fd-b8f6-7c50885e6aa4" />
 
+**Reproducibility, provenance, and integrity（可重复性、数据溯源与完整性）**
+
+<img width="902" height="368" alt="Screenshot 2026-11-02 at 14 35 42" src="https://github.com/user-attachments/assets/06c6e570-2878-4a1d-bf9c-a027fd6c2055" />
 
 
 
