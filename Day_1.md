@@ -335,14 +335,35 @@ Record based and model based imputation both estimate missing values conditional
 
 > [!NOTE]
 > 特点一：对角线永远是 1
+> 
 > 特点二：矩阵是对称的
+> A correlation matrix summarises pairwise relationships between multiple variables, but it does not establish causation or account automatically for repeated measurements.
+> 
+> 相关矩阵用于同时展示多个变量之间的两两相关关系，但不能证明因果，也不会自动处理重复测量的依赖性。
 
+**Introduction to PCA (Dimension Reduction)**
 
+*What is PCA?* Multivariate dimensionality reduction: Noise / Redundancy.
 
+PCA 是一种多变量降维方法，目的是通过新的变量组合减少数据中的冗余表示，并帮助我们理解数据的主要变化结构。
 
+<img width="352" height="199" alt="Screenshot 2026-11-02 at 11 27 35" src="https://github.com/user-attachments/assets/13bd0207-42d0-46b5-a592-34fd8f37d145" />
 
+<img width="639" height="253" alt="Screenshot 2026-11-02 at 11 28 34" src="https://github.com/user-attachments/assets/44d6ce25-11b0-4444-99f5-ed60124fc325" />
 
+> [!NOTE]
+> PCA 会寻找：
+> - PC1：数据变异最大的方向。
+> - PC2：与 PC1 正交，并且在剩余方向中变异最大的方向。
+> - PC3：与前两个方向正交，继续寻找剩余的主要变异方向。
 
+<img width="767" height="518" alt="Screenshot 2026-11-02 at 11 32 40" src="https://github.com/user-attachments/assets/20267ee3-82b2-4d7a-bbe6-a145d2dfeb68" />
+
+<img width="914" height="297" alt="Screenshot 2026-11-02 at 11 36 14" src="https://github.com/user-attachments/assets/7b9a786d-fb9a-412e-8026-40f2da8a59fd" />
+
+**Variance and Covariance**
+
+<img width="820" height="417" alt="Screenshot 2026-11-02 at 11 39 07" src="https://github.com/user-attachments/assets/496e3576-8a3d-4199-b521-3fe5bf35a308" />
 
 
 
