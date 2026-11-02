@@ -598,6 +598,147 @@ Measurement bias（测量偏差）
 
 <img width="748" height="252" alt="Screenshot 2026-11-02 at 14 05 09" src="https://github.com/user-attachments/assets/4e949893-e2b5-4849-a9ca-18cdeab510e9" />
 
+<img width="821" height="397" alt="Screenshot 2026-11-02 at 14 11 19" src="https://github.com/user-attachments/assets/a164f820-9a7d-4879-99d5-1fee596c9e81" />
+
+Feedback bias（反馈偏差）
+
+假设模型认为某类患者风险较低，因此减少对他们的检查。
+
+结果：
+1. 这些患者接受的检查更少。
+2. 医疗系统记录到的疾病更少。
+3. 下一轮训练数据中，这类患者的疾病记录仍然偏少。
+4. 新模型继续认为他们风险较低。
+
+<img width="787" height="181" alt="Screenshot 2026-11-02 at 14 16 22" src="https://github.com/user-attachments/assets/9d8bb67d-de6e-45e8-9ea9-e785f35aa87c" />
+
+A race blind or group blind model can remain biased because inequity is encoded in outcomes, proxies, and measurement processes.
+
+即使模型不直接使用种族或群体身份变量，仍然可能存在偏差，因为不平等可能已经体现在结局变量、代理变量和测量过程中。
+
+<img width="724" height="468" alt="Screenshot 2026-11-02 at 14 25 00" src="https://github.com/user-attachments/assets/8fb24d9e-e214-4927-bac0-97130ad55b6b" />
+
+> [!IMPORTANT]
+> 不使用群体身份 ≠ 没有偏差。
+>
+> 例如，模型不使用 Ethnicity，但使用 Postcode，而 Postcode 可能间接反映群体身份或社会经济差异。
+
+**Data justice in global health（全球健康中的数据正义）**
+
+<img width="904" height="327" alt="Screenshot 2026-11-02 at 14 29 11" src="https://github.com/user-attachments/assets/c864b6bb-515e-4bb1-a2d9-7641364ef386" />
+
+*Representation and authority（代表性与决策权）:* 哪些群体被数据代表？谁定义研究问题？谁控制数据访问、数据关联以及可接受的二次使用？
+
+
+1. Representation（代表性）
+
+假设某国际研究团队研究全球糖尿病风险, 但是数据来源主要是高收入国家。
+
+那么：
+- 高收入国家患者被充分代表。
+- 低收入国家患者可能代表性不足。
+即使模型在已有数据中表现很好，也不一定适合全球所有人群。
+
+
+2. Authority（决策权）
+
+例如：
+
+某个非洲国家的医院向国际研究项目提供了医疗数据。但所有研究问题、分析方法和后续数据使用决定都由国外研究团队制定,当地机构没有参与决策。
+
+>[!IMPORTANT]
+>
+> Representation concerns who is included; authority concerns who controls decisions about the data.
+
+*Capacity and credit（能力建设与贡献认可）:* 谁拥有分析和治理数据所需的基础设施、技能、领导权和作者署名机会？
+
+1. Capacity（能力）
+
+某个低收入国家的医院提供了大量患者数据。
+
+但当地医院缺乏：
+- 数据分析基础设施。
+- 统计软件和计算资源。
+- 专业数据科学人员。
+- 独立开展研究的机会。
+
+如果国际合作只提取当地数据，却不帮助提升当地研究能力，就可能造成长期的不平等。
+
+Capacity building（能力建设）可以包括培训、技术支持和研究基础设施建设。
+
+2. Credit（贡献认可）
+
+Credit 关注研究贡献是否获得适当认可。
+
+例如：
+
+当地研究人员参与了数据收集、研究设计和结果解释。
+
+但最后发表论文时，他们没有得到与贡献相符的署名或认可。
+
+这就涉及研究中的公平性。
+
+这里有一个重要术语：
+
+Authorship（论文作者署名）
+
+
+*Participation and accountability（参与和问责）:* 受到研究影响的社区，能否参与并影响研究设计、结果解释、模型部署，以及对潜在伤害的纠正？
+
+1. Participation（参与）
+
+假设研究人员开发一个模型，决定哪些患者优先获得医疗资源。
+
+如果研究设计完全由技术团队决定，而患者和受影响社区没有参与，那么研究可能忽略一些重要问题。
+
+例如：
+- 模型使用的指标是否符合当地医疗实际？
+- 某些人群是否会被不公平地排除？
+- 预测结果应该如何解释？
+
+因此，受影响群体的参与可能帮助研究团队发现原本没有注意到的问题。
+
+2. Accountability（问责）
+
+假设模型部署后，某些患者群体持续被低估疾病风险。
+
+谁来负责？
+- 是否有人监测模型表现？
+- 患者能否提出异议？
+- 是否有纠正错误的机制？
+- 是否能够调整或停止有害的部署？
+
+这就是 Accountability。
+
+*Benefit Sharing:* 研究产生的健康收益、知识、基础设施和经济价值，是否回馈给提供数据的人群？
+
+某国际研究项目使用一个低收入国家的患者数据，开发出新的疾病预测工具。
+
+研究完成后：
+- 国际研究团队发表高水平论文。
+- 科技公司获得商业收益。
+- 但当地医院无法使用该工具。
+- 当地患者也没有获得明显的健康改善。
+
+这就涉及 Benefit sharing 的问题。
+
+<img width="597" height="270" alt="Screenshot 2026-11-02 at 14 34 19" src="https://github.com/user-attachments/assets/03d6ea64-966d-45fd-b8f6-7c50885e6aa4" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
