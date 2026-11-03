@@ -87,7 +87,64 @@ Development set（开发集）用于：
 
 <img width="410" height="257" alt="Screenshot 2026-11-03 at 18 38 51" src="https://github.com/user-attachments/assets/d6ec9b9f-013a-4745-9452-2ba6f6591ef4" />
 
+**Why preprocessing belongs inside each fold 为什么数据预处理必须在每一折交叉验证内部进行？**
 
+<img width="829" height="331" alt="Screenshot 2026-11-03 at 18 42 13" src="https://github.com/user-attachments/assets/ad4651c2-700b-4c8d-8321-cbf3b7a271d8" />
+
+<img width="783" height="693" alt="Screenshot 2026-11-03 at 18 49 09" src="https://github.com/user-attachments/assets/7a745ea2-96bf-4f68-8f4f-3f00f761197f" />
+
+> [!IMPORTANT]
+> *这种问题叫作：Preprocessing leakage（预处理泄漏），这里具体表现为特征选择泄漏。*
+
+<img width="776" height="420" alt="Screenshot 2026-11-03 at 18 50 48" src="https://github.com/user-attachments/assets/e8df5c5c-8092-4ee0-8c37-c82b614257de" />
+
+**Regression predicts a numerical outcome**
+
+<img width="822" height="186" alt="Screenshot 2026-11-03 at 18 55 11" src="https://github.com/user-attachments/assets/38065860-37d3-426e-b83f-291e1d8f7eaa" />
+
+*Regression:* Regression 的目标是预测一个**数值**，而不是一个类别。
+
+*Classification:* 预测一个**类别**，通常先估计属于某个类别的概率。
+
+<img width="774" height="389" alt="Screenshot 2026-11-03 at 18 59 40" src="https://github.com/user-attachments/assets/2a5d294e-307d-41a6-8bf5-280b37f94ee6" />
+
+
+## Clustering and logistic regression
+
+**Clustering as exploratory data analysis**
+
+<img width="711" height="296" alt="Screenshot 2026-11-03 at 19 14 01" src="https://github.com/user-attachments/assets/28cf2f0e-60aa-4a31-adac-b6ddb58b375b" />
+
+Clustering是一种 **无监督学习（Unsupervised Learning）** 方法。我们没有一个已知的结果标签来告诉模型哪些分组是正确的。
+
+Clustering 结果取决于：
+- 选择了哪些变量。
+- 使用什么距离衡量相似性。
+- 是否进行了标准化。
+- 使用了哪一种聚类算法。
+因此，clustering 得到的组并不自动代表真实存在的生物学群体。
+
+举例来说：
+
+同样的 75 个肝脏，如果我们只使用 Age 和 BMI 聚类，可能得到两组。
+
+但如果改用 Lactate 和 Bilirubin，可能得到完全不同的分组。
+
+所以聚类结果不是绝对的，它依赖于分析方法。
+
+**K-means clustering: compact groups around centroids K 均值聚类——围绕聚类中心形成紧凑的分组**
+
+K-means 希望最小化所有观察对象到其所属聚类中心的平方距离总和。
+
+<img width="750" height="367" alt="Screenshot 2026-11-03 at 19 23 32" src="https://github.com/user-attachments/assets/c7a85c4d-ef4e-44c4-834f-6db619459f36" />
+
+*K-means:* 将观察对象分成 K 个组，使每个观察对象尽可能接近自己所在组的中心。
+
+Centroid 就是这个 Cluster 中所有点的平均位置。
+
+<img width="479" height="561" alt="Screenshot 2026-11-03 at 19 26 15" src="https://github.com/user-attachments/assets/e14d0d56-007c-47a5-bf06-a00edc446bea" />
+
+<img width="756" height="388" alt="Screenshot 2026-11-03 at 19 31 31" src="https://github.com/user-attachments/assets/bcd4f5f7-0a41-499f-ad34-b74af7427df1" />
 
 
 
