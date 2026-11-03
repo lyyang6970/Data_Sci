@@ -146,9 +146,69 @@ Centroid 就是这个 Cluster 中所有点的平均位置。
 
 <img width="756" height="388" alt="Screenshot 2026-11-03 at 19 31 31" src="https://github.com/user-attachments/assets/bcd4f5f7-0a41-499f-ad34-b74af7427df1" />
 
+**Hierarchical clustering: building a tree of similarity 层次聚类——构建表示相似关系的树状图**
 
+<img width="697" height="380" alt="Screenshot 2026-11-03 at 19 35 32" src="https://github.com/user-attachments/assets/d39642fa-90c1-499e-935d-c184c56442a4" />
 
+1. *Agglomerative idea：凝聚型层次聚类的基本思想*
 
+首先，将每个观察对象看作一个独立的 Cluster。
+
+然后，不断合并距离最近的两个 Cluster，直到所有观察对象都被连接到同一棵树中。
+
+<img width="688" height="410" alt="Screenshot 2026-11-03 at 19 41 18" src="https://github.com/user-attachments/assets/a1c188ed-2756-4a97-8db8-fafda97469f3" />
+
+2. *What defines “closest”？*
+
+Distance（距离）：衡量两个观察对象之间有多相似。
+
+Linkage（连接准则）：定义两个 Cluster 之间的距离应该如何计算。
+
+> [!NOTE]
+>
+> *Complete linkage（完全连接法）*
+>
+> 计算两个 Cluster 中所有跨组观察对象之间的距离，取其中最大的距离作为两组之间的距离。
+>
+> *Average linkage（平均连接法）*
+>
+> 计算两个 Cluster 中所有跨组观察对象之间的距离，然后取平均值。
+>
+> *Ward linkage*
+>
+> 选择合并后使组内变异增加最少的两个 Cluster。Ward 方法希望合并后的 Cluster 仍然尽可能紧凑。
+
+<img width="756" height="581" alt="Screenshot 2026-11-03 at 19 47 50" src="https://github.com/user-attachments/assets/bd2e3c2b-6007-458c-bddf-e356b0c11ba6" />
+
+第一步：观察 A 和 B
+
+A 和 B 在较低的位置合并。
+
+这意味着 A 和 B 比较相似。
+
+第二步：观察 D 和 E
+
+D 和 E 也在较低的位置合并。
+
+这说明它们也比较相似。
+
+第三步：观察 C
+
+C 与已经形成的 A、B 组合在更高的位置合并。
+
+说明按照当前的距离和 Linkage 规则，C 与 A、B 组合的差异比 A 与 B 之间的差异更大。
+
+第四步：最后合并
+
+左边的 A、B、C 和右边的 D、E 最终在更高的位置合并。
+
+这表示两个大组之间的差异更大。
+
+注意：树状图的纵轴是 Dissimilarity（不相似程度），不是时间。
+
+*K-means VS Hierarchical clustering*
+
+<img width="765" height="213" alt="Screenshot 2026-11-03 at 19 49 10" src="https://github.com/user-attachments/assets/38c20e33-4743-495f-86ca-998ff1ec8abe" />
 
 
 
