@@ -1,0 +1,64 @@
+# Statistical and interpretable predictive modelling
+
+**From clean longitudinal data to one prediction row**
+
+<img width="722" height="77" alt="Screenshot 2026-11-03 at 09 13 06" src="https://github.com/user-attachments/assets/18c228c7-8bca-420a-95dd-bd65302396c6" />
+
+
+## Formulating the prediction problem
+
+**Constructing the binary teaching target**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
