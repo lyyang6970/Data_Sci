@@ -210,13 +210,21 @@ C 与已经形成的 A、B 组合在更高的位置合并。
 
 <img width="765" height="213" alt="Screenshot 2026-11-03 at 19 49 10" src="https://github.com/user-attachments/assets/38c20e33-4743-495f-86ca-998ff1ec8abe" />
 
+**Choosing and checking clusters**
 
+<img width="765" height="285" alt="Screenshot 2026-11-03 at 19 58 14" src="https://github.com/user-attachments/assets/10a82ace-f7a7-4c29-bc37-4be3074d4a4e" />
 
+1. Elbow Method：肘部法则
 
+寻找这样一个位置：超过这个位置之后，即使继续增加 Cluster 数量，组内变异的下降幅度也已经很小。
 
+2. Silhouette Width：轮廓系数
 
+a(i) 与自己所在组的其他观察对象平均距离。
 
+b(i) 不是到最近一个其他观察对象的距离，而是到其他 Cluster 的平均距离中最小的那个。
 
+<img width="530" height="139" alt="Screenshot 2026-11-03 at 20 21 56" src="https://github.com/user-attachments/assets/b445fc41-83f4-4412-913e-b75ab6ade2dc" />
 
 
 
