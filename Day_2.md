@@ -390,6 +390,9 @@ Likelihood 衡量在某组模型参数下，已经观察到的这些真实标签
 
 <img width="599" height="356" alt="Screenshot 2026-11-04 at 10 31 20" src="https://github.com/user-attachments/assets/b7a87c23-eaec-404c-b56b-64c0eb0d1945" />
 
+<img width="715" height="446" alt="Screenshot 2026-11-04 at 10 52 04" src="https://github.com/user-attachments/assets/7b9a4f81-edd5-408a-986e-6c333a8040cf" />
+
+## From decision trees to the random forest comparator
 
 
 
