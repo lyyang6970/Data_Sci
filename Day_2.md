@@ -321,13 +321,34 @@ Problem 3：直线无法很好地描述概率边界附近的变化
 
 <img width="785" height="140" alt="Screenshot 2026-11-04 at 09 01 45" src="https://github.com/user-attachments/assets/d159abbb-a17b-45c0-87f6-577927a6aa2c" />
 
+**From Bernoulli probabilities to likelihood**
 
+<img width="824" height="169" alt="Screenshot 2026-11-04 at 09 10 02" src="https://github.com/user-attachments/assets/66d1d1f2-da00-4462-8934-fe871ad2e671" />
 
+> [!IMPORTANT]
+>
+> **Bernoulli distribution（伯努利分布）**用于描述只有两种可能结果的随机变量。
+>
+> 例如：
+> - 抛硬币：正面或反面。
+> - 患病情况：患病或未患病。
+> - 本次肝脏分类：Elevated 或 Low。
 
+<img width="785" height="323" alt="Screenshot 2026-11-04 at 09 17 46" src="https://github.com/user-attachments/assets/776aee11-1b72-4046-b3a4-aab0bc3f1205" />
 
+Likelihood 衡量在某组模型参数下，已经观察到的这些真实标签有多合理。
 
+> [!NOTE]
+> 
+> Probability（概率）
+>
+> 给定模型参数，研究不同结果出现的可能性。
+>
+> Likelihood（似然）
+>
+> 观察结果已经确定，我们比较不同模型参数对这个结果的支持程度。
 
-
+**Log-likelihood and cross-entropy**
 
 
 
