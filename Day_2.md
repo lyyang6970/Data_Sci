@@ -378,10 +378,17 @@ Likelihood 衡量在某组模型参数下，已经观察到的这些真实标签
 
 <img width="700" height="301" alt="Screenshot 2026-11-04 at 10 20 38" src="https://github.com/user-attachments/assets/b10d8444-2e9e-4401-80b3-56f1cc7eed03" />
 
+**Reading the logistic output before interpreting effects**
 
+<img width="813" height="243" alt="Screenshot 2026-11-04 at 10 23 07" src="https://github.com/user-attachments/assets/70bb9a2f-672b-4927-b648-5c9bbf45331d" />
 
+<img width="732" height="662" alt="Screenshot 2026-11-04 at 10 29 36" src="https://github.com/user-attachments/assets/b7eeba6a-99c8-4e4d-932e-64531d3892ad" />
 
+<img width="795" height="596" alt="Screenshot 2026-11-04 at 10 29 55" src="https://github.com/user-attachments/assets/b8ca49d7-925a-4ba2-bc5a-6b7fc20301ec" />
 
+<img width="684" height="98" alt="Screenshot 2026-11-04 at 10 31 02" src="https://github.com/user-attachments/assets/48b0a705-a378-411a-9be8-68e42cfb04b3" />
+
+<img width="599" height="356" alt="Screenshot 2026-11-04 at 10 31 20" src="https://github.com/user-attachments/assets/b7a87c23-eaec-404c-b56b-64c0eb0d1945" />
 
 
 
