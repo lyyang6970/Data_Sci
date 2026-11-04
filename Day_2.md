@@ -274,8 +274,19 @@ Problem 3：直线无法很好地描述概率边界附近的变化
 
 **Odds and log odds**
 
+<img width="582" height="169" alt="Screenshot 2026-11-04 at 08 27 28" src="https://github.com/user-attachments/assets/ebac4977-7b30-4fab-b99d-761189b94125" />
 
+> [!NOTE]
+>
+> Odds 表示：事件发生的概率与事件不发生的概率之比。
+>
+> Log Odds: 这里的log是自然对数，也就是ln。Logit 是 Log odds 的另一种名称。
+>
+> 为什么要取Log？
+>
+> <img width="677" height="688" alt="Screenshot 2026-11-04 at 08 36 21" src="https://github.com/user-attachments/assets/780827b1-441b-4405-8beb-153951d7aa98" />
 
+<img width="776" height="448" alt="Screenshot 2026-11-04 at 08 37 26" src="https://github.com/user-attachments/assets/d3d7c81b-8494-453e-ac84-5c46d831c0db" />
 
 
 
