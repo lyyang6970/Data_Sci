@@ -288,8 +288,9 @@ Problem 3：直线无法很好地描述概率边界附近的变化
 
 <img width="776" height="448" alt="Screenshot 2026-11-04 at 08 37 26" src="https://github.com/user-attachments/assets/d3d7c81b-8494-453e-ac84-5c46d831c0db" />
 
+**Deriving the inverse logit**
 
-
+<img width="807" height="276" alt="Screenshot 2026-11-04 at 08 39 58" src="https://github.com/user-attachments/assets/5b6071ad-ff18-4829-91a8-60c40311be9c" />
 
 
 
