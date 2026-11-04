@@ -226,6 +226,76 @@ b(i) 不是到最近一个其他观察对象的距离，而是到其他 Cluster 
 
 <img width="530" height="139" alt="Screenshot 2026-11-03 at 20 21 56" src="https://github.com/user-attachments/assets/b445fc41-83f4-4412-913e-b75ab6ade2dc" />
 
+**Returning to the binary prediction risk**
+
+<img width="819" height="216" alt="Screenshot 2026-11-04 at 08 03 13" src="https://github.com/user-attachments/assets/55a4f126-de28-4ec5-a28b-1c2d1e3b58b3" />
+
+*Continuous outcome regression:* 在已知这个肝脏预测变量的情况下，连续结果ri的条件平均值。
+
+*Binary classification:* 在已知第i个肝脏预测变量的条件下，该肝脏属于 Elevated risk 的概率。
+
+Suitable Training Loss（合适的训练损失）:
+
+<img width="786" height="278" alt="Screenshot 2026-11-04 at 08 09 11" src="https://github.com/user-attachments/assets/dcc7729b-5451-40a1-a34b-91f0a35f44ff" />
+
+**Why ordinary linear regression is unsuitable 为什么普通线性回归不适合二分类预测？**
+
+<img width="816" height="240" alt="Screenshot 2026-11-04 at 08 12 49" src="https://github.com/user-attachments/assets/ac78ff1f-e594-468e-86ef-8e1d9d768cfd" />
+
+<img width="440" height="308" alt="Screenshot 2026-11-04 at 08 14 15" src="https://github.com/user-attachments/assets/97569fee-c2a2-40dd-89fc-1c192120155b" />
+
+<img width="527" height="385" alt="Screenshot 2026-11-04 at 08 15 08" src="https://github.com/user-attachments/assets/8d0c9c2d-a780-4c32-b25e-2d88c4b4e4d7" />
+
+Problem 1: 线性预测分数 η 没有固定的上下界，但概率必须位于 0 和 1 之间。
+
+<img width="455" height="212" alt="Screenshot 2026-11-04 at 08 17 47" src="https://github.com/user-attachments/assets/124a6dcc-f75f-4225-ab68-3d4f9bc677a1" />
+
+<img width="699" height="522" alt="Screenshot 2026-11-04 at 08 18 59" src="https://github.com/user-attachments/assets/70df5594-0d85-4a5e-a099-675fc03ce717" />
+
+Problem 2：方差不是常数。
+
+- 当概率接近 0 时，方差很小。
+- 当概率接近 1 时，方差也很小。
+- 当概率等于 0.5 时，方差最大，为 0.25。
+
+为什么？
+
+因为当事件概率为 0.5 时，结果最不确定。
+
+而当事件概率接近 0 或 1 时，结果相对更确定。
+
+*考试重点：* 二分类变量具有 Heteroscedasticity（异方差性），即条件方差随预测概率变化。
+
+Problem 3：直线无法很好地描述概率边界附近的变化
+
+<img width="739" height="484" alt="Screenshot 2026-11-04 at 08 23 56" src="https://github.com/user-attachments/assets/04bba72f-3e4a-423a-975f-241cb0d47bee" />
+
+<img width="501" height="330" alt="Screenshot 2026-11-04 at 08 24 47" src="https://github.com/user-attachments/assets/582134e5-3ded-4b36-8c10-53bca4e5b813" />
+
+**Odds and log odds**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
