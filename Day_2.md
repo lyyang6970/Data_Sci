@@ -309,6 +309,17 @@ Problem 3：直线无法很好地描述概率边界附近的变化
 
 <img width="770" height="496" alt="Screenshot 2026-11-04 at 08 47 54" src="https://github.com/user-attachments/assets/24ab46fd-8950-4792-94a1-d44f928ca963" />
 
+**Coefficient interpretation**
+
+<img width="822" height="338" alt="Screenshot 2026-11-04 at 08 52 00" src="https://github.com/user-attachments/assets/5bc51972-2807-4d05-91d2-72a2393b8ac5" />
+
+> [!IMPORTANT]
+>
+> 预测变量增加一个单位，Log odds 增加 βj。回归系数 β 描述的是 Log odds 的变化，而不是 Probability 的直接变化。
+>
+> <img width="675" height="681" alt="Screenshot 2026-11-04 at 08 55 57" src="https://github.com/user-attachments/assets/3afca545-e2de-4fd9-bbf2-2184a53348c7" />
+
+<img width="785" height="140" alt="Screenshot 2026-11-04 at 09 01 45" src="https://github.com/user-attachments/assets/d159abbb-a17b-45c0-87f6-577927a6aa2c" />
 
 
 
