@@ -376,6 +376,7 @@ Likelihood 衡量在某组模型参数下，已经观察到的这些真实标签
 
 <img width="754" height="515" alt="Screenshot 2026-11-04 at 09 58 06" src="https://github.com/user-attachments/assets/325d3b8e-3659-46ff-b181-5cd25969c9e4" />
 
+<img width="700" height="301" alt="Screenshot 2026-11-04 at 10 20 38" src="https://github.com/user-attachments/assets/b10d8444-2e9e-4401-80b3-56f1cc7eed03" />
 
 
 
