@@ -348,12 +348,27 @@ Likelihood 衡量在某组模型参数下，已经观察到的这些真实标签
 >
 > 观察结果已经确定，我们比较不同模型参数对这个结果的支持程度。
 
+**Likelihood for independent observations**
+
+<img width="818" height="280" alt="Screenshot 2026-11-04 at 09 33 06" src="https://github.com/user-attachments/assets/ea89b337-3959-4eba-86c3-49e244d38081" />
+
+<img width="773" height="309" alt="Screenshot 2026-11-04 at 09 34 18" src="https://github.com/user-attachments/assets/d41d3e65-0ca7-4b3c-b6c8-6fa5d19e6eab" />
+
 **Log-likelihood and cross-entropy**
 
+*使用log-likelihood的原因：* 如果我们有很多数据，每个概率都小于 1，不断相乘就可能得到一个非常接近 0 的数。取对数之后，原本的连乘就可以转换成求和。
 
+所以 Log-likelihood 通常是非正数。
 
+而我们希望定义一个：
 
+越小越好的 Loss（损失函数）。
 
+因此，对 Log-likelihood 取负号。
+于是：
+- Maximum Log-likelihood：越大越好。
+- Minimum Negative Log-likelihood：越小越好。
+它们对应相同的优化目标。
 
 
 
