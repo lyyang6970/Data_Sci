@@ -292,10 +292,22 @@ Problem 3：直线无法很好地描述概率边界附近的变化
 
 <img width="807" height="276" alt="Screenshot 2026-11-04 at 08 39 58" src="https://github.com/user-attachments/assets/5b6071ad-ff18-4829-91a8-60c40311be9c" />
 
+**The logistic-regression model 逻辑回归模型**
+
+<img width="682" height="444" alt="Screenshot 2026-11-04 at 08 43 43" src="https://github.com/user-attachments/assets/4f201049-fcaf-442d-aae2-d316cb0d07cd" />
+
+- 第一步：计算 Linear predictor
+
+<img width="531" height="596" alt="Screenshot 2026-11-04 at 08 44 44" src="https://github.com/user-attachments/assets/6a70f057-db08-4c71-b017-55f4e7628b6b" />
 
 
+- 第二步：将 Linear predictor 转换成 Probability
 
+- 第三个公式：为什么 Logistic Regression 是线性的？
 
+<img width="774" height="604" alt="Screenshot 2026-11-04 at 08 47 15" src="https://github.com/user-attachments/assets/4d0e4115-e2b3-40a4-9f78-b08fa6da16e3" />
+
+<img width="770" height="496" alt="Screenshot 2026-11-04 at 08 47 54" src="https://github.com/user-attachments/assets/24ab46fd-8950-4792-94a1-d44f928ca963" />
 
 
 
