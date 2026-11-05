@@ -450,7 +450,7 @@ Compare the eligible candidate splits and choose the one with the largest positi
 
 <img width="770" height="343" alt="Screenshot 2026-11-05 at 10 59 09" src="https://github.com/user-attachments/assets/c8983ea7-aef8-44da-88e8-b3390a0a39e3" />
 
-
+当训练数据发生变化时，单棵决策树可能发生很大的改变。而随机森林将许多有意构建得不同的决策树组合起来。
 
 
 
