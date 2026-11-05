@@ -450,7 +450,15 @@ Compare the eligible candidate splits and choose the one with the largest positi
 
 <img width="770" height="343" alt="Screenshot 2026-11-05 at 10 59 09" src="https://github.com/user-attachments/assets/c8983ea7-aef8-44da-88e8-b3390a0a39e3" />
 
-当训练数据发生变化时，单棵决策树可能发生很大的改变。而随机森林将许多有意构建得不同的决策树组合起来。
+> [!NOTE]
+>
+> 当训练数据发生变化时，单棵决策树可能发生很大的改变。而随机森林将许多有意构建得不同的决策树组合起来。
+>
+> Random Forest 可以理解为：
+>
+> 建立很多棵不同的 Decision Trees，然后综合它们对同一个新观察对象的预测。
+
+<img width="760" height="520" alt="Screenshot 2026-11-05 at 11 43 58" src="https://github.com/user-attachments/assets/6408447c-9dad-4feb-9f90-438e33914499" />
 
 
 
