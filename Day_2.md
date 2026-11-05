@@ -394,13 +394,61 @@ Likelihood 衡量在某组模型参数下，已经观察到的这些真实标签
 
 ## From decision trees to the random forest comparator
 
-到第35页了
+**Why include one nonlinear model?**
 
+Logistic regression assumes an additive linear relationship on the log odds scale unless interactions or transformations are specified.
 
+如果没有额外加入交互项或变量变换，Logistic Regression 假设预测变量与 Log odds 之间存在加性线性关系。
 
+<img width="812" height="206" alt="Screenshot 2026-11-05 at 10 33 02" src="https://github.com/user-attachments/assets/c90b37b1-ee92-4bc9-9c29-b9841440c26b" />
 
+<img width="747" height="538" alt="Screenshot 2026-11-05 at 10 33 44" src="https://github.com/user-attachments/assets/03063ba7-d942-4a9b-8f0d-7fd2d64bef8c" />
 
+**Recursive binary partitioning: the leaf majority**
 
+> [!NOTE]
+>
+> Recursive binary partitioning 就是反复使用二元判断，将数据逐步划分成更小的组。
+>
+> 叶节点中数量较多的类别，决定该叶节点的最终分类结果。
+
+**Gini impurity**
+
+<img width="822" height="322" alt="Screenshot 2026-11-05 at 10 38 07" src="https://github.com/user-attachments/assets/3cc65e69-4533-4f95-8616-1443a675125d" />
+
+*类别越均衡地混合，Gini 越高；节点越接近只有一种类别，Gini 越低。*
+
+**Choosing a split**
+
+当决策树有很多种可能的分裂方式时，它选择能够使 Gini Impurity *降低最多*的分裂方式。
+
+<img width="782" height="265" alt="Screenshot 2026-11-05 at 10 45 35" src="https://github.com/user-attachments/assets/5eb20dc7-69c5-431a-a8e8-8d56b8e68b94" />
+
+Compare the eligible candidate splits and choose the one with the largest positive impurity reduction.
+
+比较所有符合条件的候选分裂，选择能够带来最大正向不纯度下降的分裂。
+
+**Why trees overfit? 为什么决策树容易过拟合？**
+
+> [!NOTE]
+>
+> Overfitting 指的是：模型过度适应训练数据中的细节和随机噪声，导致它在训练集上表现很好，但在新数据上的表现可能较差。
+
+<img width="803" height="305" alt="Screenshot 2026-11-05 at 10 53 56" src="https://github.com/user-attachments/assets/9a48a606-bc32-427d-8f7e-1df020a8e883" />
+
+<img width="486" height="478" alt="Screenshot 2026-11-05 at 10 54 58" src="https://github.com/user-attachments/assets/6713d6a2-6246-41fd-8b9c-51552f2bd094" />
+
+<img width="774" height="612" alt="Screenshot 2026-11-05 at 10 54 39" src="https://github.com/user-attachments/assets/2b13947b-e978-4042-b584-88b7641beb13" />
+
+> [!IMPORTANT]
+>
+> Locally optimal（局部最优）不一定等于 Globally optimal（全局最优）。
+>
+> 这种每一步选择当前最优分裂的策略称为 Greedy approach（贪心策略）。
+
+**From one decision tree to a random forest**
+
+<img width="770" height="343" alt="Screenshot 2026-11-05 at 10 59 09" src="https://github.com/user-attachments/assets/c8983ea7-aef8-44da-88e8-b3390a0a39e3" />
 
 
 
