@@ -12,7 +12,9 @@ Among all decisions that are allowed, which one best achieves our stated goal?
 
 <img width="493" height="152" alt="Screenshot 2026-11-05 at 09 18 43" src="https://github.com/user-attachments/assets/c3e5dc0f-1d36-4c3e-9069-8532ccdbb30f" />
 
+## From prediction to decisions
 
+<img width="781" height="245" alt="Screenshot 2026-11-05 at 09 27 37" src="https://github.com/user-attachments/assets/a0d57ba0-fd39-4b87-988e-344e1815d19d" />
 
 
 
