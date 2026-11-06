@@ -460,6 +460,54 @@ Compare the eligible candidate splits and choose the one with the largest positi
 
 <img width="760" height="520" alt="Screenshot 2026-11-05 at 11 43 58" src="https://github.com/user-attachments/assets/6408447c-9dad-4feb-9f90-438e33914499" />
 
+**Bootstrap sampling: a different training sample for each tree**
+
+<img width="799" height="312" alt="Screenshot 2026-11-06 at 18 23 15" src="https://github.com/user-attachments/assets/c420a246-439c-4bc2-909b-bc7248b8962c" />
+
+Bootstrap Sampling 是从训练数据中有放回地随机抽样，并且抽取次数等于原始训练样本的行数。
+
+*Bootstrap sample size ≠ Number of unique observations。*
+
+> [!NOTE]
+> 
+> Out-of-bag（OOB）：什么是袋外样本？
+>
+> 对于某棵树而言，在它的 Bootstrap sample 中没有被抽中的肝脏，叫作 Out-of-bag（袋外样本，OOB）。
+>
+> <img width="501" height="302" alt="Screenshot 2026-11-06 at 18 34 44" src="https://github.com/user-attachments/assets/e1860cf6-b483-46b8-ad3c-c314339ec5f3" />
+
+*必须对完整的肝脏特征行进行重抽样，不能对单独的时间点测量记录进行重抽样。*
+
+**Bootstrap sampling: why approximately 63.2%? 为什么 Bootstrap 抽样平均只包含约 63.2% 的不同观察对象？**
+
+一个 Bootstrap sample 会从 \(N\) 个肝脏中，进行 \(N\) 次有放回抽样。
+
+我们现在只关注某一个特定的肝脏。
+
+例如，在 60 个肝脏中，我们只关注 Liver A。
+
+我们希望计算：
+
+Liver A 在这 60 次抽样中，至少出现一次的概率是多少？
+
+<img width="812" height="318" alt="Screenshot 2026-11-06 at 18 47 37" src="https://github.com/user-attachments/assets/0a415f7e-2aea-4d5d-a715-85ad685ac67c" />
+
+<img width="211" height="72" alt="Screenshot 2026-11-06 at 18 50 47" src="https://github.com/user-attachments/assets/ca4bbdc7-4933-43fe-a0f9-32d103f2895e" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
