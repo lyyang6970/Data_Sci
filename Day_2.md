@@ -494,11 +494,21 @@ Liver A 在这 60 次抽样中，至少出现一次的概率是多少？
 
 <img width="211" height="72" alt="Screenshot 2026-11-06 at 18 50 47" src="https://github.com/user-attachments/assets/ca4bbdc7-4933-43fe-a0f9-32d103f2895e" />
 
+**Random predictors at every split**
 
+<img width="802" height="293" alt="Screenshot 2026-11-06 at 18 56 15" src="https://github.com/user-attachments/assets/6f4c4cab-260d-4d5d-84d6-6ea35db43958" />
 
+我们一共有 4 个预测变量，但每次分裂时，只随机选择其中 2 个供模型考虑。
 
+<img width="752" height="461" alt="Screenshot 2026-11-06 at 19 03 03" src="https://github.com/user-attachments/assets/f9f8e178-cdb8-4399-a7d2-7673093d8b85" />
 
+**Probability prediction: average the leaf probabilities**
 
+<img width="774" height="354" alt="Screenshot 2026-11-06 at 19 22 19" src="https://github.com/user-attachments/assets/57944e21-eb6b-461a-a81c-73635a93d243" />
+
+如果使用多数投票，这个例子会预测 Elevated，但多数投票与概率平均是两种不同的组合规则。
+
+<img width="419" height="157" alt="Screenshot 2026-11-06 at 19 25 31" src="https://github.com/user-attachments/assets/2da12258-a2c0-4a6f-a6c3-68acc7507710" />
 
 
 
