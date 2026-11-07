@@ -731,33 +731,51 @@ Step 3：Interpolate（插值）: Linear interpolation（线性插值）。
 
 置信区间端点是评价指标的数值或两个模型指标的差异，而不是它在排序列表中的位置。
 
+**Class Imbalance**
 
+<img width="909" height="340" alt="Screenshot 2026-11-07 at 20 26 29" src="https://github.com/user-attachments/assets/e20d572c-4578-4c0a-986f-7a97197281a7" />
 
+类别不平衡时，Accuracy 可能很高，但模型对少数类别的识别能力很差。
 
+如果需要使用类别权重或重抽样，应当只在训练 Fold 内部进行，并在之后重新评估 Calibration。
 
+Oversampling：增加少数类别的训练样本数量。
 
+Undersampling：减少多数类别的训练样本数量。
 
+**Interpretability: coefficients and predictor units**
 
+<img width="909" height="360" alt="Screenshot 2026-11-07 at 20 36 56" src="https://github.com/user-attachments/assets/8b72a43f-5f9e-4486-ab9a-f989a9a723e8" />
 
+当预测变量使用不同单位时，不能直接根据原始回归系数的绝对值大小比较变量的重要性。
 
+<img width="916" height="409" alt="Screenshot 2026-11-07 at 20 42 16" src="https://github.com/user-attachments/assets/3c12160a-c4e5-4112-a431-93da8891ee1e" />
 
+**Prediction is not causation**
 
+<img width="908" height="182" alt="Screenshot 2026-11-07 at 20 44 49" src="https://github.com/user-attachments/assets/f1cad881-2eb4-41a0-a3b7-4767271087fb" />
 
+1. Prediction：预测问题
 
+对于一个具有特定观察特征的患者，什么结果更有可能发生？
 
+2. Causation：因果问题
 
+如果我们对患者实施某种干预，与不实施干预相比，结果会发生什么变化？
 
+<img width="766" height="207" alt="Screenshot 2026-11-07 at 20 47 06" src="https://github.com/user-attachments/assets/80bbd767-d507-4af7-a1e7-a8280619deb7" />
 
+<img width="770" height="452" alt="Screenshot 2026-11-07 at 20 48 56" src="https://github.com/user-attachments/assets/10e7c8ae-e883-40a7-9daa-abd20ffb8042" />
 
+为什么 Collider 重要？
 
+因为如果我们在分析中对 Collider 进行条件化，例如只研究 X 处于某个特定状态的人，就可能人为产生 A 与 B 之间的统计关联。
 
+即使 A 和 B 原本没有直接关系，这种条件化也可能让它们看起来有关。
 
+这种现象称为：
 
-
-
-
-
-
+Collider bias（碰撞变量偏倚）。
 
 
 
