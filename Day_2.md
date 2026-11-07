@@ -510,6 +510,56 @@ Liver A 在这 60 次抽样中，至少出现一次的概率是多少？
 
 <img width="419" height="157" alt="Screenshot 2026-11-06 at 19 25 31" src="https://github.com/user-attachments/assets/2da12258-a2c0-4a6f-a6c3-68acc7507710" />
 
+> [!IMPORTANT]
+>
+> The forest's flexibility does not solve the small sample problem.
+>
+> 随机森林的灵活性不能解决样本量过小的问题。
+
+<img width="732" height="377" alt="Screenshot 2026-11-07 at 13 42 45" src="https://github.com/user-attachments/assets/dac2fdab-15b9-44fb-a560-fd03f7430ecc" />
+
+## Evolution that matches health decisions
+
+**Confusion-matrix notation**
+
+<img width="275" height="273" alt="Screenshot 2026-11-07 at 14 34 30" src="https://github.com/user-attachments/assets/e22c7b5a-dd4a-4906-85be-7ce3afc9d658" />
+
+True / False 表示预测是否正确。
+
+Positive / Negative 表示模型预测的类别。
+
+> [!NOTE]
+>
+> TP: 真实类别是 Positive，模型也预测为 Positive。
+>
+> TN: 真实类别是 Negative，模型也预测为 Negative。
+>
+> FP: 真实类别是 Negative，但模型错误地预测为 Positive。
+>
+> FN: 真实类别是 Positive，但模型错误地预测为 Negative。（Missed case（漏检））
+
+The four counts depend on a selected probability threshold and define sensitivity, specificity, precision, and accuracy.
+
+TP、FP、FN 和 TN 这四个数量取决于所选择的预测概率阈值，并且可以用于计算敏感度、特异度、精确率和准确率。
+
+<img width="769" height="174" alt="Screenshot 2026-11-07 at 14 38 49" src="https://github.com/user-attachments/assets/e9d44ecd-9050-4147-8557-98911b31c427" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
