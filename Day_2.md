@@ -642,36 +642,94 @@ PR 曲线
 
 *Calibration:* 
 
+<img width="771" height="349" alt="Screenshot 2026-11-07 at 18 03 00" src="https://github.com/user-attachments/assets/66d2b66b-38a9-4582-b8f8-3945fdc5844e" />
 
+1. Perfect calibration（完美校准）模型预测多少，实际发生比例就大约是多少。
+2. Overconfident（过度自信）过度自信意味着模型的预测概率太极端。（模型预测过于接近 0 或 1。）
 
+例如：
+- 对高风险组预测 90%，但实际只有 70%。
+- 对低风险组预测 10%，但实际有 30%。
+注意这里的两个方向：
 
+对于高预测风险：
 
+Observed < Predicted
 
+对于低预测风险：
 
+Observed > Predicted
 
+3. Underconfident（信心不足）模型预测概率不够极端，过于靠近 0.5。
 
+整体校准用于判断模型总体上是否低估或高估事件发生风险。
 
+<img width="783" height="137" alt="Screenshot 2026-11-07 at 18 08 01" src="https://github.com/user-attachments/assets/c1dfa7be-e7dd-4b86-8d3e-dfd66a4f844b" />
 
+**Brier score（布里尔评分）**
 
+<img width="819" height="268" alt="Screenshot 2026-11-07 at 18 15 56" src="https://github.com/user-attachments/assets/9ca5949a-aa27-4d77-9937-5f2da7a33c0f" />
 
+> [!IMPORTANT]
+>
+> Brier score 是预测概率与真实标签之间的平均平方误差。
+>
+> 注意：它与普通回归中的 Mean Squared Error（MSE）在数学形式上相同。
+>
+> 区别在于，这里：
+> - 真实标签只能是 0 或 1。
+> - 模型预测的是 0 到 1 之间的概率。
+>
+> 预测概率越接近真实标签，Brier score 越小。
+>
+> Brier score 同时反映模型的区分能力和概率校准表现。
 
+<img width="566" height="475" alt="Screenshot 2026-11-07 at 18 25 47" src="https://github.com/user-attachments/assets/51d12701-5f78-447b-9398-8861342344f5" />
 
+<img width="723" height="427" alt="Screenshot 2026-11-07 at 18 40 46" src="https://github.com/user-attachments/assets/3ecb4b5d-3ee8-437f-8c2b-cec414f931cf" />
 
+降低阈值可以减少漏检，但通常会增加误报和后续处理负担。
 
+**Evaluation metrics: what to use and when**
 
+<img width="788" height="471" alt="Screenshot 2026-11-07 at 18 48 31" src="https://github.com/user-attachments/assets/78211f77-2b11-40b3-a51c-6e225ad11819" />
 
+**Comparing models: confidence intervals for differences**
 
+<img width="898" height="427" alt="Screenshot 2026-11-07 at 19 03 39" src="https://github.com/user-attachments/assets/0f8fda30-3360-4edc-a383-a238778b1560" />
 
+配对 Bootstrap：在每一次重抽样中，使用相同的观察对象比较两个模型。
 
+如果我们抽中了 Liver A，那么必须同时保留：
+- Liver A 的真实标签。
+- Model A 对 Liver A 的预测概率。
+- Model B 对 Liver A 的预测概率。
 
+<img width="749" height="524" alt="Screenshot 2026-11-07 at 19 25 14" src="https://github.com/user-attachments/assets/e83ba299-9491-4d8e-9b12-4e2181ec9ccd" />
 
+> [!IMPORTANT]
+>
+> 差异的哪个方向表示 Model A 更好？
+>
+> 情况 1：AUROC 或 F1：越大越好。
+>
+> 情况 2：Brier score 或 Log loss：越小越好。
+>
+> 两个模型、事先选定的分类阈值以及错误成本都应该保持固定。
 
+**Calculating the endpoints of a 95% interval**
 
+<img width="908" height="419" alt="Screenshot 2026-11-07 at 19 32 37" src="https://github.com/user-attachments/assets/ff30c54f-c3c4-4a22-be77-0a184aff9dbc" />
 
+Step 1：首先，将所有 Bootstrap 结果按照从小到大的顺序排列。
 
+Step 2：计算百分位数的位置
 
+Step 3：Interpolate（插值）: Linear interpolation（线性插值）。
 
+<img width="529" height="200" alt="Screenshot 2026-11-07 at 19 51 33" src="https://github.com/user-attachments/assets/9b0cccd7-f6a8-452b-94af-3d9f95fa66a5" />
 
+置信区间端点是评价指标的数值或两个模型指标的差异，而不是它在排序列表中的位置。
 
 
 
