@@ -30,15 +30,24 @@
 
 <img width="751" height="175" alt="Screenshot 2026-11-07 at 21 27 19" src="https://github.com/user-attachments/assets/2cd38218-f96b-4025-82c4-fd503885e169" />
 
+**Wrapper methods: RFE and sequential selection 包装式特征选择方法——递归特征消除与序列特征选择**
 
+<img width="897" height="421" alt="Screenshot 2026-11-07 at 21 57 16" src="https://github.com/user-attachments/assets/25135fe0-b160-4a84-bdd0-2065d3114403" />
 
+1. RFE（Recursive Feature Elimination）：递归特征消除。
+2. Sequential Selection：序列特征选择，包括 Forward Selection 和 Backward Selection。
 
+<img width="558" height="392" alt="Screenshot 2026-11-07 at 22 03 31" src="https://github.com/user-attachments/assets/0a75989b-4365-483e-930a-d88ca50492b8" />
 
+<img width="779" height="369" alt="Screenshot 2026-11-07 at 22 08 30" src="https://github.com/user-attachments/assets/138a4542-6caf-427b-94e5-191e9862807c" />
 
+> [!TIP]
+>
+> Forward Selection 从没有任何特征开始，每次增加一个最有用的特征。
+>
+> Backward Selection 从全部特征开始，每次尝试删除一个特征，比较删除哪一个之后模型表现最好。
 
-
-
-
+<img width="696" height="228" alt="Screenshot 2026-11-07 at 22 10 33" src="https://github.com/user-attachments/assets/3a927422-831d-4b92-9b24-d55a5fa22cd5" />
 
 
 
