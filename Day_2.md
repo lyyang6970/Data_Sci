@@ -544,19 +544,70 @@ TP、FP、FN 和 TN 这四个数量取决于所选择的预测概率阈值，并
 
 <img width="769" height="174" alt="Screenshot 2026-11-07 at 14 38 49" src="https://github.com/user-attachments/assets/e9d44ecd-9050-4147-8557-98911b31c427" />
 
+**Core classification metrics**
 
+<img width="799" height="276" alt="Screenshot 2026-11-07 at 14 40 34" src="https://github.com/user-attachments/assets/ea440549-1d95-4797-9032-20ea197992c7" />
 
+*Sensitivity:* 在所有真实属于 Positive 的观察对象中，有多少比例被模型正确预测为 Positive？
 
+*Specificity:* 在所有真实属于 Negative 的观察对象中，有多少比例被模型正确预测为 Negative？
 
+*Precision:* 在所有被模型预测为 Positive 的观察对象中，有多少比例实际上属于 Positive？
 
+*Accuracy:* 在所有观察对象中，有多少比例被正确分类？
 
+**F1 score and macro-F1**
 
+<img width="810" height="383" alt="Screenshot 2026-11-07 at 14 44 08" src="https://github.com/user-attachments/assets/2034460a-641f-41a8-8e2f-20754fd22b26" />
 
+*不包含TN*
 
+Macro-F1 对每个类别给予相同的权重。当我们希望少数类别与常见类别的表现同样受到重视时，Macro-F1 很有用。
 
+应该使用验证预测结果比较模型，同时报告每个类别各自的 F1，因为平均值可能掩盖某个类别表现很差的问题。
 
+**ROC curve and AUROC**
 
+<img width="823" height="350" alt="Screenshot 2026-11-07 at 15 27 37" src="https://github.com/user-attachments/assets/84c1a17a-9583-4c32-a800-915c8032ce2a" />
 
+理想情况下，我们希望：
+- TPR 越高越好。
+- FPR 越低越好。
+
+ROC 图的左上角是理想位置。
+
+> [!NOTE]
+>
+> <img width="440" height="654" alt="Screenshot 2026-11-07 at 15 47 26" src="https://github.com/user-attachments/assets/484753f9-092f-4a39-bb38-f5f3e3ce13c0" />
+>
+> ROC 曲线就是把不同阈值对应的 FPR 和 TPR 画在同一张图上。
+>
+> 注意：真实标签始终不变，改变的只是模型将概率转换成类别的规则。
+
+*AUROC:* ROC 曲线下面积
+
+<img width="778" height="385" alt="Screenshot 2026-11-07 at 15 54 33" src="https://github.com/user-attachments/assets/ca18b6d5-f1d1-40b0-904c-d565d1c14d79" />
+
+AUROC 衡量模型将 Positive 排在 Negative 前面的能力，而不是预测概率数值本身是否准确。
+
+**Precision–recall curve and its area**
+
+<img width="819" height="305" alt="Screenshot 2026-11-07 at 16 00 27" src="https://github.com/user-attachments/assets/f5d54dbf-4f61-479e-a939-4bf1e68affd5" />
+
+<img width="516" height="171" alt="Screenshot 2026-11-07 at 16 01 22" src="https://github.com/user-attachments/assets/62a88007-5252-4fe2-8df6-db574900cdb1" />
+
+PR 曲线的理想位置是右上角，对应Recall=1，Precision=1，这意味着：
+
+- 所有真实 Positive 都被找到了。
+- 所有预测 Positive 都是正确的。
+
+也就是既没有漏检，也没有误报。
+
+随机排序模型的 PR 参考水平是数据中的 Positive prevalence。
+
+> [!IMPORTANT]
+>
+> ROC 关注 FPR 与 TPR 的关系，而 PR 关注 Precision 与 Recall 的关系。
 
 
 
