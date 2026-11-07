@@ -609,6 +609,90 @@ PR 曲线的理想位置是右上角，对应Recall=1，Precision=1，这意味�
 >
 > ROC 关注 FPR 与 TPR 的关系，而 PR 关注 Precision 与 Recall 的关系。
 
+<img width="541" height="161" alt="Screenshot 2026-11-07 at 16 24 40" src="https://github.com/user-attachments/assets/b2d747a2-8c4c-46ab-8137-fa93851c4d6b" />
+
+<img width="615" height="187" alt="Screenshot 2026-11-07 at 16 24 57" src="https://github.com/user-attachments/assets/83bf9d56-1387-4cf2-8614-cc7eb30680ad" />
+
+ROC 曲线
+- 新加入一个 TP，曲线向上。
+- 新加入一个 FP，曲线向右。
+- 关注 TPR 与 FPR 的关系。
+
+PR 曲线
+- 新加入一个 TP，Recall 上升，Precision 可能上升。
+- 新加入一个 FP，Recall 不变，Precision 下降。
+- 关注 Recall 与 Precision 的关系。
+
+需要特别记住三个结论：
+1. ROC：新增 TP 向上，新增 FP 向右。
+2. PR：新增 TP 可能使 Precision 上升；新增 FP 会使 Precision 下降，而 Recall 不变。
+3. AUROC = 0.75 和 AUPRC = 0.792 不能直接比较大小来判断哪一种评价更好，因为它们衡量的内容不同。
+
+**Why precision–recall depends on positive prevalence**
+
+*为什么一个模型即使具有很高的 Sensitivity（敏感度）和 Specificity（特异度），它的 Precision 仍然可能非常低？*
+
+<img width="813" height="389" alt="Screenshot 2026-11-07 at 16 43 42" src="https://github.com/user-attachments/assets/de3278ad-b3e5-4ff8-8b64-dbec8bbfe3cf" />
+
+<img width="748" height="710" alt="Screenshot 2026-11-07 at 16 44 16" src="https://github.com/user-attachments/assets/17ab2b34-0c70-4d6e-96d6-64755e9edde9" />
+
+**Calibration**
+
+<img width="763" height="349" alt="Screenshot 2026-11-07 at 16 46 31" src="https://github.com/user-attachments/assets/7b73c709-39f1-444d-81c5-a5faa624b419" />
+
+*Calibration:* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
