@@ -115,23 +115,56 @@ The selection procedure is part of the model being evaluated.
 >
 > 在使用 Test Set 评估之前，固定完整的建模流程。
 
+**Multiclass classification requires one probability per class**
 
+<img width="914" height="342" alt="Screenshot 2026-11-08 at 14 05 46" src="https://github.com/user-attachments/assets/0a09c654-65a7-42ce-a178-7ba4614faabc" />
 
+*One-versus-Rest（OvR）:* 为每个类别分别训练一个二分类器，预测概率可能需要额外校准或归一化。
 
+OvR 有什么问题？
 
+因为四个模型是分别训练的，所以它们输出的概率不一定加起来等于 1。
 
+*Multinomial Model（多项分类模型）:* 同时拟合所有类别，并通过 Softmax 直接产生一个符合概率规则的分布。
 
+<img width="776" height="211" alt="Screenshot 2026-11-08 at 14 20 44" src="https://github.com/user-attachments/assets/60de57d3-5b17-4e94-b7a4-c75d90faaa41" />
 
+**Deriving softmax from class log odds**
 
+<img width="913" height="415" alt="Screenshot 2026-11-08 at 14 22 49" src="https://github.com/user-attachments/assets/9200166c-c04a-4617-862b-b49a1f5104fc" />
 
+<img width="473" height="158" alt="Screenshot 2026-11-08 at 14 26 37" src="https://github.com/user-attachments/assets/970c6f47-c209-4d3f-8696-b7fb028c4cfd" />
 
+> [!IMPORTANT]
+>
+> Softmax 的四个重要性质:
+>
+> 性质 1：指数运算使所有数值变为正数。
+>
+> 性质 2：除以所有指数值的总和，使概率归一化。
+>
+> 性质 3：给所有类别的分数同时加上同一个常数，不会改变 Softmax 概率。
+>
+> 性质 4：原始分数最高的类别，Softmax 概率也最高。Softmax 改变了分数的数值尺度，但不会改变类别的排名。
 
+**Deriving multiclass cross-entropy from likelihood**
 
+<img width="910" height="367" alt="Screenshot 2026-11-08 at 14 51 55" src="https://github.com/user-attachments/assets/9661a426-4810-4486-87db-1a64cdd24d6d" />
 
+> [!NOTE]
+>
+> Cross-Entropy 是一种 Loss Function（损失函数），用于衡量模型预测的概率与真实类别之间的差异。
+> - 模型给真实类别的概率越高，Cross-Entropy 越小。
+> - 模型给真实类别的概率越低，Cross-Entropy 越大。
+> - Cross-Entropy 越小，代表模型的概率预测表现越好。
 
+<img width="867" height="404" alt="Screenshot 2026-11-08 at 15 12 34" src="https://github.com/user-attachments/assets/6c51be98-7727-44b9-a3b2-874a9efcf1a9" />
 
+Cross-Entropy 在训练过程中评价预测概率的质量，而 Accuracy 只评价最终选择的类别是否正确。
 
+**Why high dimensional models need regularisation**
 
+<img width="858" height="301" alt="Screenshot 2026-11-08 at 15 14 34" src="https://github.com/user-attachments/assets/c6ba0168-28cf-4dcf-9f82-07a7776e521f" />
 
 
 
